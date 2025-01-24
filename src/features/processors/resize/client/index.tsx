@@ -286,7 +286,7 @@ export class Options extends Component<Props, State> {
         <Expander>
           {isWorkerOptions(options) ? (
             <label class={style.optionToggle}>
-              预乘 Alpha 通道
+              预乘透明度通道
               <Checkbox
                 name="premultiply"
                 checked={options.premultiply}
