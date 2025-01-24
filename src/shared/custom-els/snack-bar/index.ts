@@ -15,6 +15,7 @@ const getConsBtnContent=(action:string):string=>{
   const contentMap: Record<string, string> = {
     dismiss: "关闭",
     undo: "撤销",
+    reload: "刷新",
   };
   return contentMap[action] || action;
 }
