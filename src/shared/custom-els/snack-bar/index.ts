@@ -11,6 +11,13 @@ export interface SnackOptions {
   actions?: string[];
 }
 
+const getConsBtnContent=(action:string):string=>{
+  const contentMap: Record<string, string> = {
+    dismiss: "关闭",
+    undo: "撤销",
+  };
+  return contentMap[action] || action;
+}
 function createSnack(
   message: string,
   options: SnackOptions,
@@ -35,7 +42,7 @@ function createSnack(
     for (const action of actions) {
       const button = document.createElement('button');
       button.className = style.button;
-      button.textContent = action;
+      button.textContent = getConsBtnContent(action) ;
       button.addEventListener('click', () => {
         clearTimeout(timeoutId);
         resolve(action);
